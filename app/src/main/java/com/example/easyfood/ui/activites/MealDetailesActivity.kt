@@ -150,9 +150,9 @@ class MealDetailesActivity : AppCompatActivity() {
     private fun getMealInfoFromIntent() {
         val tempIntent = intent
 
-        this.mealId = tempIntent.getStringExtra(MEAL_ID)!!
-        this.mealStr = tempIntent.getStringExtra(MEAL_STR)!!
-        this.mealThumb = tempIntent.getStringExtra(MEAL_THUMB)!!
+        this.mealId = tempIntent.getStringExtra(MEAL_ID.name)!!
+        this.mealStr = tempIntent.getStringExtra(MEAL_STR.name)!!
+        this.mealThumb = tempIntent.getStringExtra(MEAL_THUMB.name)!!
     }
 
 }

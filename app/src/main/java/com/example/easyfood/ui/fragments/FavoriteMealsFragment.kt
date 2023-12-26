@@ -106,11 +106,11 @@ class FavoriteMeals : Fragment() {
             override fun onChanged(t: List<MealDetail>?) {
                 val bottomDialog = MealBottomDialog()
                 val b = Bundle()
-                b.putString(CATEGORY_NAME,t!![0].strCategory)
-                b.putString(MEAL_AREA,t[0].strArea)
-                b.putString(MEAL_NAME,t[0].strMeal)
-                b.putString(MEAL_THUMB,t[0].strMealThumb)
-                b.putString(MEAL_ID,t[0].idMeal)
+                b.putString(CATEGORY_NAME.name,t!![0].strCategory)
+                b.putString(MEAL_AREA.name,t[0].strArea)
+                b.putString(MEAL_NAME.name,t[0].strMeal)
+                b.putString(MEAL_THUMB.name,t[0].strMealThumb)
+                b.putString(MEAL_ID.name,t[0].idMeal)
                 bottomDialog.arguments = b
                 bottomDialog.show(childFragmentManager,"Favorite bottom dialog")
             }
@@ -128,9 +128,9 @@ class FavoriteMeals : Fragment() {
         myAdapter.setOnFavoriteMealClickListener(object : FavoriteMealsRecyclerAdapter.OnFavoriteClickListener{
             override fun onFavoriteClick(meal: MealDB) {
                 val intent = Intent(context, MealDetailesActivity::class.java)
-                intent.putExtra(MEAL_ID,meal.mealId.toString())
-                intent.putExtra(MEAL_STR,meal.mealName)
-                intent.putExtra(MEAL_THUMB,meal.mealThumb)
+                intent.putExtra(MEAL_ID.name,meal.mealId.toString())
+                intent.putExtra(MEAL_STR.name,meal.mealName)
+                intent.putExtra(MEAL_THUMB.name,meal.mealThumb)
                 startActivity(intent)
             }
 

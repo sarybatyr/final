@@ -54,9 +54,9 @@ class SearchFragment : Fragment() {
         binding.searchedMealCard.setOnClickListener {
             val intent = Intent(context, MealDetailesActivity::class.java)
 
-            intent.putExtra(MEAL_ID, mealId)
-            intent.putExtra(MEAL_STR, mealStr)
-            intent.putExtra(MEAL_THUMB, mealThub)
+            intent.putExtra(MEAL_ID.name, mealId)
+            intent.putExtra(MEAL_STR.name, mealStr)
+            intent.putExtra(MEAL_THUMB.name, mealThub)
 
             startActivity(intent)
 

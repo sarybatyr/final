@@ -109,9 +109,9 @@ class HomeFragment : Fragment() {
         mostPopularFoodAdapter.setOnClickListener(object : OnItemClick {
             override fun onItemClick(meal: Meal) {
                 val intent = Intent(activity, MealDetailesActivity::class.java)
-                intent.putExtra(MEAL_ID, meal.idMeal)
-                intent.putExtra(MEAL_STR, meal.strMeal)
-                intent.putExtra(MEAL_THUMB, meal.strMealThumb)
+                intent.putExtra(MEAL_ID.name, meal.idMeal)
+                intent.putExtra(MEAL_STR.name, meal.strMeal)
+                intent.putExtra(MEAL_THUMB.name, meal.strMealThumb)
                 startActivity(intent)
             }
 
@@ -120,7 +120,7 @@ class HomeFragment : Fragment() {
         myAdapter.onItemClicked(object : CategoriesRecyclerAdapter.OnItemCategoryClicked {
             override fun onClickListener(category: Category) {
                 val intent = Intent(activity, MealActivity::class.java)
-                intent.putExtra(CATEGORY_NAME, category.strCategory)
+                intent.putExtra(CATEGORY_NAME.name, category.strCategory)
                 startActivity(intent)
             }
 
@@ -138,11 +138,11 @@ class HomeFragment : Fragment() {
                 override fun onChanged(t: List<MealDetail>?) {
                     val bottomSheetFragment = MealBottomDialog()
                     val b = Bundle()
-                    b.putString(CATEGORY_NAME, t!![0].strCategory)
-                    b.putString(MEAL_AREA, t[0].strArea)
-                    b.putString(MEAL_NAME, t[0].strMeal)
-                    b.putString(MEAL_THUMB, t[0].strMealThumb)
-                    b.putString(MEAL_ID, t[0].idMeal)
+                    b.putString(CATEGORY_NAME.name, t!![0].strCategory)
+                    b.putString(MEAL_AREA.name, t[0].strArea)
+                    b.putString(MEAL_NAME.name, t[0].strMeal)
+                    b.putString(MEAL_THUMB.name, t[0].strMealThumb)
+                    b.putString(MEAL_ID.name, t[0].idMeal)
 
                     bottomSheetFragment.arguments = b
 
@@ -163,9 +163,9 @@ class HomeFragment : Fragment() {
         binding.randomMeal.setOnClickListener {
             val temp = meal.meals[0]
             val intent = Intent(activity, MealDetailesActivity::class.java)
-            intent.putExtra(MEAL_ID, temp.idMeal)
-            intent.putExtra(MEAL_STR, temp.strMeal)
-            intent.putExtra(MEAL_THUMB, temp.strMealThumb)
+            intent.putExtra(MEAL_ID.name, temp.idMeal)
+            intent.putExtra(MEAL_STR.name, temp.strMeal)
+            intent.putExtra(MEAL_THUMB.name, temp.strMealThumb)
             startActivity(intent)
         }
 

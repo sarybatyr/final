@@ -50,7 +50,7 @@ class CategoryFragment : Fragment(R.layout.fragment_category) {
        myAdapter.onItemClicked(object : CategoriesRecyclerAdapter.OnItemCategoryClicked{
            override fun onClickListener(category: Category) {
                val intent = Intent(context, MealActivity::class.java)
-               intent.putExtra(CATEGORY_NAME,category.strCategory)
+               intent.putExtra(CATEGORY_NAME.name,category.strCategory)
                startActivity(intent)
            }
        })

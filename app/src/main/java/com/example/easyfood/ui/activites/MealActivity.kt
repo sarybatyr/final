@@ -50,9 +50,9 @@ class MealActivity : AppCompatActivity() {
         myAdapter.setOnMealClickListener(object : SetOnMealClickListener {
             override fun setOnClickListener(meal: Meal) {
                 val intent = Intent(applicationContext, MealDetailesActivity::class.java)
-                intent.putExtra(MEAL_ID, meal.idMeal)
-                intent.putExtra(MEAL_STR, meal.strMeal)
-                intent.putExtra(MEAL_THUMB, meal.strMealThumb)
+                intent.putExtra(MEAL_ID.name, meal.idMeal)
+                intent.putExtra(MEAL_STR.name, meal.strMeal)
+                intent.putExtra(MEAL_THUMB.name, meal.strMealThumb)
                 startActivity(intent)
             }
         })
@@ -73,7 +73,7 @@ class MealActivity : AppCompatActivity() {
 
     private fun getCategory(): String {
         val tempIntent = intent
-        val x = intent.getStringExtra(CATEGORY_NAME)!!
+        val x = intent.getStringExtra(CATEGORY_NAME.name)!!
         categoryNme = x
         return x
     }

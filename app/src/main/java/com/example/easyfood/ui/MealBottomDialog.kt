@@ -30,11 +30,11 @@ class MealBottomDialog() : BottomSheetDialogFragment() {
         super.onCreate(savedInstanceState)
         setStyle(STYLE_NORMAL,R.style.AppBottomSheetDialogTheme)
         val b = arguments
-        mealName = b!!.getString(MEAL_NAME).toString()
-        mealId =b!!.getString(MEAL_ID).toString()
-        mealImg =b!!.getString(MEAL_THUMB).toString()
-        mealCategory =b!!.getString(CATEGORY_NAME).toString()
-        mealCountry =b!!.getString(MEAL_AREA).toString()
+        mealName = b!!.getString(MEAL_NAME.name).toString()
+        mealId =b!!.getString(MEAL_ID.name).toString()
+        mealImg =b!!.getString(MEAL_THUMB.name).toString()
+        mealCategory =b!!.getString(CATEGORY_NAME.name).toString()
+        mealCountry =b!!.getString(MEAL_AREA.name).toString()
     }
 
     override fun onCreateView(
@@ -53,9 +53,9 @@ class MealBottomDialog() : BottomSheetDialogFragment() {
 
         view.setOnClickListener {
             val intent = Intent(context, MealDetailesActivity::class.java)
-            intent.putExtra(MEAL_ID.name,mealId)
-            intent.putExtra(MEAL_STR.name,mealName)
-            intent.putExtra(MEAL_THUMB.name,mealImg)
+            intent.putExtra(MEAL_ID.name, mealId)
+            intent.putExtra(MEAL_STR.name, mealName)
+            intent.putExtra(MEAL_THUMB.name, mealImg)
             startActivity(intent)
         }
 
